@@ -1,7 +1,9 @@
 \documentclass{book}
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
-\title{algorithms-and-data-structures}
+\title{Algorithms and Data Structures}
 \author{Jonah Benedicto}
 \date{September 2025}
 
@@ -10,5 +12,179 @@
 \maketitle
 
 \section*{Introduction}
+
+\tableofcontents
+
+\chapter{Introduction}
+
+\section{Algorithm}
+
+An algorithm is a step-by-step set of instructions used to solve a problem or perform a computation.
+
+\section{Data Structure}
+
+A data structure is a format for organising, storing and accessing data to be used for efficient processing, retrieval, and manipulation.
+
+\section{Abstract Data Type}
+
+An abstract data type is a model that defines the way data is processed, retrieved and manipulated without specifying the way it is organised, stored and accessed.
+
+\chapter{Algorithms and Analysis}
+
+\section{Experimental (Empirical) Analysis}
+
+Experimental (empirical) analysis is the process of evaluating an algorithm's efficiency by designing, implementing, and testing it in practice. This approach empirically measures time complexity (execution time) and space complexity (memory usage) in relation to the size of its inputs.
+
+\section{Theoretical Analysis}
+
+Theoretical analysis is the process of evaluating an algorithm's efficiency by mathematically determining its time complexity and space complexity in relation to input size, without implementation.
+
+\section{Theoretical Analysis Steps}
+
+\begin{enumerate}
+  \item Write the algorithm in pseudocode.
+  \item Determine the number of primitive operations executed.
+  \item Express the algorithm as a function of the input size. f(n)
+  \item Express the function in asymptotic notation through asymptotic analysis.
+\end{enumerate}
+
+\section{Asymptotic Analysis}
+
+Asymptotic analysis is the process of evaluating an algorithm's efficiency by classifying the asymptotic bound of its time complexity and space complexity functions.
+
+\section{Asymptotic Notation}
+
+There are three primary types of asymptotic notation:
+
+\begin{itemize}
+  \item Big-O Notation - Describes an asymptotic upper bound on a function.
+    Given functions $f(n)$ and $g(n)$. A function $f(n)$ is in $O(g(n))$ if there exists a positive constant $c$ and $n_0$ such that $0 \le f(n) \le cg(n)$ for all $n \ge n_0$.
+  \item Big-Omega Notation - Describes an asymptotic lower bound on a function.
+    Given functions $f(n)$ and $g(n)$. A function $f(n)$ is in $\Omega(g(n))$ if there exists a positive constant $c$ and $n_0$ such that $0 \le cg(n) \le f(n)$ for all $n \ge n_0$.
+  \item Big-Theta Notation - Describes an asymptotic tight bound on a function.
+    Given functions $f(n)$ and $g(n)$. A function $f(n)$ is in $\Theta(g(n))$ if there exists a positive constant $c_1$, $c_2$ and $n_0$ such that $0 \le c_{1}g(n) \le f(n) \le c_{2}g(n)$ for all $n \ge n_0$.
+\end{itemize}
+
+\section{Fundamental Functions}
+There are eight fundamental functions in asymptotic analysis:
+
+\begin{itemize}
+  \item Constant: $1$
+  \item Logarithmic: $\log_{2}{n}$
+  \item Linear: $n$
+  \item N-Log-N: $n\log_{2}{n}$
+  \item Quadratic: $n^2$
+  \item Cubic: $n^3$
+  \item Exponential: $2^n$
+  \item Factorial: $n!$
+\end{itemize}
+
+\section{Best-Case, Worst-Case, Average-Case}
+
+There are three types of cases:
+
+\begin{itemize}
+  \item Worst-case - The minimum time complexity or space complexity an algorithm takes to complete.
+  \item Average-case - The average time complexity or space complexity an algorithm takes to complete.
+  \item Best-case - The maximum time complexity or space complexity an algorithm takes to complete.
+\end{itemize}
+
+\newpage
+
+\section{Problems}
+
+\begin{enumerate}
+  \item Discuss the difference between worst-case and best-case behaviour, and describe this difference using one or more concrete examples.
+  \item Given two functions $f(n)$ and $g(n)$, discuss the difference between the following statements:
+    \begin{itemize}
+      \item $f(n) \in O(g(n))$;
+      \item $f(n) \in \Omega(g(n))$;
+      \item $f(n) \in \Theta(g(n))$.
+    \end{itemize}
+  \item A polynomial of degree $k$ is a function given by $f(n) = a_{k}n^{k} + a_{k - 1}n^{k - 1} + \cdots + a_{1}n + a_{0}$, where $a_{0}, \cdots, a_{k}$ are constants. 
+    Assume $a_{k} > 0$ for the following questions:
+    \begin{enumerate}
+      \item Give a tight Big-O bound on f(n) using the simplification rules given in the lectures.
+      \item Give a tight Big-Omega bound on f(n) using the simplification rules given in the lectures.
+      \item Does a Big-Theta bound exist for f(n)? If so, explain why it exists, then provide it.
+    \end{enumerate}
+  \item Recall that $f(n)$ is $O(g(n))$ ($f$ is bounded from above by $g$) if there exists positive $c$ and $n_0$ such that $f(n) \le cg(n)$ for all $n \ge n_0$. Using this definition, find and prove big-O bounds for the following functions:
+    $$3 + 2 \log_{2}{n}, \quad (n + 1)(n - 1), \quad \sqrt{9n^{5} - 5}$$
+  \item Using previous question or otherwise, find big-O bounds for these functions (you are not required to prove these):
+    $$2^{n}+n^{2}, \quad \log_{2}{2^{n} \cdot n^{2}}$$
+  \item In algorithm analysis, we often omit the base of logarithms for convenience. This question will prove this is a mathematically valid thing to do.
+    Using the fact that $\log_{a}(x) = \log_{b}(x)/\log_{b}(a)$ for all $a, b > 1$, prove that $\log_{a}(n)$ is $O(\log_{b}(n))$
+  \item Show that $f(n) = n$ is not $O(\log_{2}(n))$ by proving no $c$ and $n_0$ can satisfy the definition.
+  \item Recall that $f(n)$ is $\Omega(g(n))$ ($f$ is bounded from below by $g$) if there exist $c$ and $n_0$ such that $f(n) \ge cg(n)$ for $n \ge n_0$.
+    Prove that for any strictly positive and increasing function is $\Omega(1)$. Why is this not useful in algorithm analysis?  
+\end{enumerate}
+
+\newpage
+
+\section{Solutions}
+
+\begin{enumerate}
+  \item The worst-case is the maximum time complexity or space complexity an algorithm takes to complete and the best-case is the minimum time complexity or space complexity an algorithm takes to complete.
+    For example, consider a linear search algorithm through an unordered list. The worst-case would be the case that the target does not exist and the best-case would be the case that the target is the first element.
+  \item
+    \begin{itemize}
+      \item The statement $f(n) \in O(g(n))$ means that the function $f(n)$ has an asymptotic upper bound $g(n)$.
+      \item The statement $f(n) \in \Omega(g(n))$ means that the function $f(n)$ has an asymptotic lower bound $g(n)$.
+      \item The statement $f(n) \in \Theta(g(n))$ means that the function $f(n)$ has an asymptotic tight bound $g(n)$.
+    \end{itemize}
+  \item 
+    \begin{enumerate}
+      \item $O(n^k)$
+      \item $\Omega(n^k)$
+      \item Yes, the Big-Theta bound for f(n) exists since the Big-O bound for f(n) and the Big-Omega bound for f(n) are the same. $\Theta(n^k)$
+    \end{enumerate}
+  \item $f(n) = 3 + 2 \log_{2}{n}$ is $O(\log_{2}{n})$.
+    \begin{align*}
+      f(n) &<= cg(n) \\
+      3 + 2 \log_{2}{n} &<= 3 \log_{2}{n} + 2 \log_{2}{n} \\
+      3 + 2 \log_{2}{n} &<= 5 \log_{2}{n} \\ 
+      c = 5, & \quad n_0 = 2 \quad \square
+    \end{align*}
+    $f(n) = (n + 1)(n - 1)$ is $O(n^{2})$
+    \begin{align*}
+      f(n) &<= cg(n) \\
+      (n + 1)(n - 1) &<= n^2 \\
+      n^2 - 1 &<= n^2 \\
+      c = 1, & \quad n_0 = 1 \quad \square
+    \end{align*}
+    $f(n) = \sqrt{9n^{5}-5}$ is $O(\sqrt{n^{5}})$
+    \begin{align*}
+      f(n) &<= cg(n) \\
+      \sqrt{9n^5-5} &<= \sqrt{9n^5} \\
+      \sqrt{9n^5-5} &<= 3\sqrt{n^5} \\
+      c = 3, &\quad n_0 = 1 \quad \square
+    \end{align*}
+  \item $2^n + n^2$ is $O(2^n)$
+    \begin{align*}
+      log_{2}(2^{n} \cdot n^{2}) &= \log_{2}{2^{n}} + \log_{2}{n^{2}} \\
+      &= n + 2
+    \end{align*}
+    $\log_{2}(2^{n} \cdot n^{2})$ is $O(n)$
+  \item $f(n) = log_{a}(n)$ is $O(log_{b}(n))$
+    \begin{align*}
+      f(n) &<= cg(n) \\
+      log_{a}n = \log_{b}(n)/\log_{b}(a) &<= \log_{b}(n) \\ 
+      c = 1, &\quad n_0 = b \quad \square
+    \end{align*}
+  \item $f(n) = n$ is not in $O(\log_{2}(n))$
+    \begin{align*}
+      f(n) &<= cg(n) \\
+      n &<= c\log_{2}(n) \\
+      \frac{n}{\log_2{n}} &<= c
+    \end{align*}
+    There does not exist a $c$ and $n_0$.
+  \item
+    \begin{align*}
+      f(n) &\ge cg(n) \\
+      f(n) &\ge f(1) \\
+      c = 1, &\quad n_0 = 1 \quad \square
+    \end{align*}
+    It is not useful because stating that an algorithm is $\Omega(1)$ is essentially equivalent to saying that any algorithm requires at least one operation to run. While this is true, it provides no meaningful information about the algorithm’s time complexity or space complexity. In other words, the bound $\Omega(n)$ is trivial, since it holds for virtually all algorithms, and therefore does not help us distinguish between different time complexities.
+\end{enumerate}
 
 \end{document}
