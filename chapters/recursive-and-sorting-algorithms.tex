@@ -72,7 +72,7 @@ Space-Complexity:
 
 \subsection{Insertion Sort}
 
-Insertion sort is a sorting algorithm that repeatedly gets the first item in the unsorted array and finds and inserts it into the correct position in the sorted part of the collection until the collection is sorted.
+Insertion sort is a sorting algorithm that repeatedly gets the first item in the unsorted collection and finds and inserts it into the correct position in the sorted part of the collection until the collection is sorted.
 
 Time Complexity:
 
@@ -91,32 +91,39 @@ Space Complexity:
 
 \subsection{Merge Sort}
 
-Merge sort is a sorting algorithm 
+Merge sort is a sorting algorithm that recursively splits a collection into halves, sorts each half, and merges them back until the collection is sorted.
 
-Time Complexity:
+Time Complexity: 
 
 \begin{itemize}
-  \item 
+  \item Best-case: $O(n\log_{2}n)$
+  \item Average-case: $O(n\log_{2}n)$
+  \item Worst-case: $O(n\log_{2}n)$
 \end{itemize}
 
 Space Complexity:
 
 \begin{itemize}
-  \item 
+  \item Not in-place: $O(n)$
 \end{itemize}
 
 \subsection{Quick Sort}
 
+Quick sort is a sorting algorithm that recursively partitions a collection around a random pivot where left side is less than pivot and right side is greater than pivot until the collection is sorted.
+
 Time Complexity:
 
 \begin{itemize}
-  \item 
+  \item Best-case: $O(n\log_{2}(n))$
+  \item Average-case: $O(n\log_{2}(n))$
+  \item Worst-case: $O(n^{2})$
 \end{itemize}
 
 Space Complexity:
 
 \begin{itemize}
-  \item 
+  \item In-place: $O(\log_{2}(n))$
+  \item Not in-place: $O(n)$
 \end{itemize}
 
 \section{Problems}
